@@ -36,7 +36,7 @@ export default function About() {
               alt="Logo"
               width={400}
               height={400}
-              className="flex justify-cent"/>
+              className="flex justify-central m-auto"/>
          <h1 className="font-bold text-4xl xs:text-5xl sm:text-6xl md:text-xl lg:text-8xl xl:text-8xl text-accent">
             Satria Arya Diva{" "}
           

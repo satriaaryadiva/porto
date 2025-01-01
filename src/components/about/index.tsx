@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+ 
 import ItemLayout from "./ItemLayout";
 
 const AboutDetails = () => {
@@ -37,12 +37,7 @@ const AboutDetails = () => {
         <ItemLayout
           className={"col-span-full sm:col-span-6 md:col-span-4 !p-0"}
         >
-          <img
-            className="w-full h-auto"
-            src="https://github-readme-stats.vercel.app/api/top-langs?username=AliSabet81&theme=transparent&hide_border=true&title_color=5BBFFE&text_color=FFFFFF&icon_color=5BBFFE&text_bold=false"
-            alt="AliSabet"
-            loading="lazy"
-          />
+          <h1>Skills</h1>
         </ItemLayout>
         <ItemLayout className={"col-span-full md:col-span-8 !p-0"}>
           <img
