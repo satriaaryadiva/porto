@@ -10,7 +10,7 @@ const AboutDetails = () => {
           <h2 className="text-xl md:text-2xl text-left w-full capitalize">
             The Coding Gamer: Leveling Up in Web Development
           </h2>
-          <p className="font-light text-sm sm:text-sm md:text-base">
+          <p className="  text-sm sm:text-sm md:text-base  font-bold">
             My web development quest is fueled by an arsenal of powerful tools
             and languages, with JavaScript serving as my primary weapon. I
             expertly wield frameworks like React.js and Next.js to build
