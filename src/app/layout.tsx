@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+ 
 import "./globals.css";
 import clsx from "clsx";
 import FireFliesBackground from "@/components/FireFliesBackground";
 import Sound from "@/components/Sound";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+const monseratFont = monserat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ali Sabet",
-  description: "Front-End developer",
+  title: "Satria Arya Diva",
+  description:
+    "Saya Satria Arya Diva, seorang Front-End Developer yang berdedikasi untuk menciptakan pengalaman pengguna yang luar biasa.",
 };
 
 export default function RootLayout({
@@ -19,12 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={clsx(
-          inter.variable,
-          "bg-background text-foreground font-inter"
-        )}
-      >
+      <body className={clsx("bg-background  text-foreground   font-default")}>
         {children}
         <FireFliesBackground />
         <Sound />

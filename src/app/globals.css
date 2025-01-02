@@ -8,6 +8,7 @@
     --foreground: 225 225 225;
     --muted: 115 115 115;
     --accent: 91 191 254;
+    --font-default: "Comic Sans MS", "Comic Sans", cursive;
     /* #5BBFFE */
   }
 }
