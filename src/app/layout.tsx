@@ -5,8 +5,7 @@ import clsx from "clsx";
 import FireFliesBackground from "@/components/FireFliesBackground";
 import Sound from "@/components/Sound";
 
-
-const monseratFont = monserat({ subsets: ["latin"] });
+ 
 
 export const metadata: Metadata = {
   title: "Satria Arya Diva",
