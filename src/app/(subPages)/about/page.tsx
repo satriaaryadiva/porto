@@ -27,7 +27,7 @@ export default function About() {
  
 
       {/* Text Section */}
-      <div className="relative w-full  h-full  "><Image
+      <div className="relative w-full  h-full   "><Image
               src="/image/3d-portrait-people.png"
               alt="Logo"
               width={300}
