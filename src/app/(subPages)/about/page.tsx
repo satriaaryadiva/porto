@@ -15,29 +15,31 @@ export default function About() {
       ></div>
 
       {/* Models */}
-      <div className="absolute w-full h-screen top-0 left-0">
+      <div className="absolute w-full border-red-700 border-solid  h-screen top-0 flex md:flex-row flex-col  items-center justify-around left-0">
+     
         <RenderModel>
           <Headphone />
         </RenderModel>
         <RenderModel>
           <Mouse />
-        </RenderModel>
-        <RenderModel>
-          <Controller />
-        </RenderModel>
-      </div>
-
-      {/* Text Section */}
-      <div className="relative w-full h-screen flex flex-col items-center justify-center">
-        <div  className=" border-solid border-b-4 border-b-teal-400 absolute w-full text-center top-[45%] md:top-[40%] left-1/2 -translate-y-1/2 -translate-x-1/2">
-          
-          <Image
+        </RenderModel><Image
               src="/image/3d-portrait-people.png"
               alt="Logo"
               width={400}
+              priority
               height={400}
               className="flex justify-central m-auto"/>
-         <h1 className="font-bold text-4xl xs:text-5xl sm:text-6xl md:text-xl lg:text-8xl xl:text-8xl text-accent">
+        <RenderModel>
+          <Controller />
+        </RenderModel> 
+      </div>
+
+      {/* Text Section */}
+      <div className="relative w-full  h-64   ">
+        <div  className="    absolute   py-5 mt-4 rounded-2xl bg-black sm:bg-transparent  w-full text-center top-[45%]   left-1/2 -translate-y-1/2 -translate-x-1/2">
+          
+        
+         <h1 className="font-bold md:font-extrabold text-4xl xs:text-5xl sm:text-6xl   lg:text-8xl xl:text-8xl text-accent">
             Satria Arya Diva{" "}
           
           </h1>
