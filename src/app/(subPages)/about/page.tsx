@@ -10,32 +10,31 @@ export default function About() {
     <>
       {/* Background */}
       <div
-        className="-z-50 top-0 left-0 fixed w-full h-full bg-cover bg-center opacity-25"
+        className="-z-50 top-0 left-0 fixed w-full h-full bg-cover flex flex-row justify-strecth       bg-center opacity-25"
        
-      ></div>
+      ><RenderModel>
+      <Headphone />
+    </RenderModel>
+    <RenderModel>
+      <Mouse />
+    </RenderModel><RenderModel>
+          <Controller />
+        </RenderModel></div>
 
       {/* Models */}
-      <div className="absolute w-full border-red-700 border-solid  h-screen top-0 flex md:flex-row flex-col  items-center justify-around left-0">
      
-        <RenderModel>
-          <Headphone />
-        </RenderModel>
-        <RenderModel>
-          <Mouse />
-        </RenderModel><Image
-              src="/image/3d-portrait-people.png"
-              alt="Logo"
-              width={400}
-              priority
-              height={400}
-              className="flex justify-central m-auto"/>
-        <RenderModel>
-          <Controller />
-        </RenderModel> 
-      </div>
+      
+ 
 
       {/* Text Section */}
-      <div className="relative w-full  h-64   ">
+      <div className="relative w-full  h-full  "><Image
+              src="/image/3d-portrait-people.png"
+              alt="Logo"
+              width={300}
+              priority
+              height={300}
+              className="flex justify-central m-auto h-auto w-auto"/>
+     
         <div  className="    absolute   py-5 mt-4 rounded-2xl bg-black sm:bg-transparent  w-full text-center top-[45%]   left-1/2 -translate-y-1/2 -translate-x-1/2">
           
         

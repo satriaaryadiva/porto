@@ -6,8 +6,8 @@ const AboutDetails = () => {
   return (
     <section className="py-0 mt-0 w-full">
       <div className="grid grid-cols-12 xs:gap-6  gap-9 md:gap-8 w-full">
-        <ItemLayout className="col-span-full  lg:col-span-8 row-span-2 flex-col items-start">
-          <h2 className="text-xl md:text-2xl text-left w-full capitalize">
+        <ItemLayout className="col-span-full  lg:col-span-8 row-span-2 text-wrap flex-col items-start">
+          <h2 className="text-xl font-semibold md:text-2xl text-left w-full capitalize">
             The Coding Gamer: Leveling Up in Web Development
           </h2>
           <p className="  text-sm sm:text-sm md:text-base  font-bold">

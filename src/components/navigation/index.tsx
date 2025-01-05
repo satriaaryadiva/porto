@@ -25,7 +25,7 @@ const Navigation = () => {
   const isMedium = size >= 768;
 
   return (
-    <div className="w-full fixed h-screen flex items-center justify-center">
+    <div className="w-full fixed h-screen flex items-center  justify-center">
       <ResponsiveComponent>
         {({ size }: { size: number }) => {
           return size && size >= 480 ? (
@@ -33,7 +33,7 @@ const Navigation = () => {
               variants={container}
               initial="hidden"
               animate="show"
-              className="flex items-center justify-center relative hover:pause animate-spin-slow group"
+              className="flex items-center justify-center relative bg-cyan-400  hover:pause animate-spin-slow group"
             >
               {BtnList.map((btn, index) => {
                 const angleRed = (index * angleIncrement * Math.PI) / 180;
