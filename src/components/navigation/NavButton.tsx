@@ -15,9 +15,12 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import { IBtnList } from "@/app/data";
 
+// Fungsi untuk mendapatkan ikon berdasarkan nama
+// Fungsi untuk mendapatkan ikon berdasarkan nama
 const getIcon = (icon: string) => {
   switch (icon) {
     case "home":
+      return <Home className="w-full h-auto font-extrabold" strokeWidth={1.5} />;
       return <Home className="w-full h-auto font-extrabold" strokeWidth={1.5} />;
     case "about":
       return <User className="w-full h-auto" strokeWidth={1.5} />;
@@ -38,12 +41,17 @@ const getIcon = (icon: string) => {
   }
 };
 
+// Variabel animasi untuk Framer Motion
+// Variabel animasi untuk Framer Motion
 const item = {
   hidden: { scale: 0 },
+ 
   show: { scale: 1 },
 };
 
-const NavLink = motion<any>(Link);
+// Membungkus Link Next.js dengan Framer Motion
+const NavLink = motion(Link);
+ 
 
 interface INavBtn extends IBtnList {
   x: number | string;
@@ -51,6 +59,8 @@ interface INavBtn extends IBtnList {
   labelDirection?: "left" | "right";
 }
 
+// Komponen tombol navigasi
+// Komponen tombol navigasi
 const NavButton = ({
   x,
   y,
@@ -70,12 +80,13 @@ const NavButton = ({
           >
             <NavLink
               variants={item}
-              href={link}
+              href={link} // Properti href diizinkan karena menggunakan Next.js Link
+    
               target={newTab ? "_blank" : "_self"}
               className="text-foreground rounded-full flex items-center justify-center custom-bg"
               aria-label={label}
-              name={label}
             >
+            
               <span className="relative w-14 h-14 p-4 animate-spin-slow-reverse group-hover:pause hover:text-accent bg-cyan-300 rounded-full text-black">
                 {getIcon(icon)}
                 <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
@@ -92,15 +103,19 @@ const NavButton = ({
               variants={item}
               target={newTab ? "_blank" : "_self"}
               className="text-foreground rounded-full font-extrabold flex items-center justify-center custom-bg"
+          
               aria-label={label}
-              name={label}
             >
-              <span className="relative w-10 h-10 bg-cyan-300 text-xl rounded-full font-extrabold xs:w-14 xs:h-14 p-2.5 xs:p-4 hover:text-accent">
+              <span className="relative w-10 h-10 bg-cyan-300 text-xl text-black rounded-full font-extrabold xs:w-14 xs:h-14 p-2.5 xs:p-4 hover:text-accent">
                 {getIcon(icon)}
+                <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
                 <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
                 <span
                   className={clsx(
-                    "absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md font-extraboldshadow-lg whitespace-nowrap",
+ 
+
+                    "absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md font-extrabold shadow-lg whitespace-nowrap",
+
                     labelDirection === "left" ? "right-full left-auto" : ""
                   )}
                 >
