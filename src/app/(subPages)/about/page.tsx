@@ -39,7 +39,7 @@ export default function About() {
           
         
          <h1 className="font-bold md:font-extrabold text-4xl xs:text-5xl sm:text-6xl   lg:text-8xl xl:text-8xl text-accent">
-            Satria Arya Diva{" "}
+            Satria Arya Di sva{" "}
           
           </h1>
         </div>
