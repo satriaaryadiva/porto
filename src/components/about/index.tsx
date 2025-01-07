@@ -4,11 +4,11 @@ import ItemLayout from "./ItemLayout";
 
 const AboutDetails = () => {
   return (
-    <section className="py-0 mt-0 w-full">
-      <div className="grid grid-cols-12 xs:gap-6  gap-9 md:gap-8 w-full m-auto">
+    <section className="py-0  p-2 w-full">
+      <div className="grid grid-cols-12 xs:gap-6  gap-5 - md:gap-8 w-full m-auto">
         <ItemLayout className="col-span-full  lg:col-span-8 row-span-2 text-wrap flex-col items-start">
           <h2 className="text-xl font-semibold md:text-2xl text-left w-full capitalize">
-            The Coding Gamer: Leveling Up in Web Develoddpment
+            The Coding Gamer: Leveling Up in Web Development
           </h2>
           <p className="  text-sm sm:text-sm md:text-base  font-bold">
             My web development quest is fueled by an arsenal of powerful tools
@@ -58,7 +58,7 @@ const AboutDetails = () => {
           <img
             className="w-full h-auto"
             src="https://skillicons.dev/icons?i=js,html,css,scss,discord,express,git,github,linkedin,firebase,nextjs,nodejs,npm,react,stackoverflow,tailwind,ts,vite,vscode,yarn"
-            alt="skill satria"
+            alt="skill Satria"
             loading="lazy"
           />
         </ItemLayout>
@@ -66,7 +66,7 @@ const AboutDetails = () => {
           <img
             className="w-full h-auto"
             src="https://github-readme-streak-stats.herokuapp.com?user=satriaaryadiva&theme=dark&hide_border=true&type=png&background=EB545400&ring=5BBFFE&currStreakLabel=5BBFFE"
-            alt="AliSabet"
+            alt="SAtria"
             loading="lazy"
           />
         </ItemLayout>

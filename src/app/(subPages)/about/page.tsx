@@ -38,7 +38,7 @@ export default function About() {
         <div  className="    absolute   py-5 mt-4 rounded-2xl bg-black sm:bg-transparent  w-full text-center top-[45%]   left-1/2 -translate-y-1/2 -translate-x-1/2">
           
         
-         <h1 className="font-bold md:font-extrabold text-4xl xs:text-5xl sm:text-6xl   lg:text-8xl xl:text-8xl text-accent">
+         <h1 className="font-bold   md:font-extrabold text-4xl xs:text-5xl sm:text-6xl   lg:text-8xl xl:text-8xl text-accent">
             Satria Arya Diva{" "}
           
           </h1>
