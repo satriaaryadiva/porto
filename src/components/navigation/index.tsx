@@ -16,7 +16,7 @@ const container = {
   },
 };
 
-const Navigation = () => {
+const  Navigation = () => {
   const angleIncrement = 360 / BtnList.length;
 
   const size = useScreenSize() as number;
@@ -25,7 +25,7 @@ const Navigation = () => {
   const isMedium = size >= 768;
 
   return (
-    <div className="w-full fixed h-screen flex items-center  justify-center">
+    <div className="w-full fixed h-screen flex items-center font-black  justify-center">
       <ResponsiveComponent>
         {({ size }: { size: number }) => {
           return size && size >= 480 ? (
@@ -33,7 +33,7 @@ const Navigation = () => {
               variants={container}
               initial="hidden"
               animate="show"
-              className="flex items-center justify-center relative   hover:pause animate-spin-slow group"
+              className="flex items-center justify-center relative   font-black hover:pause animate-spin-slow group"
             >
               {BtnList.map((btn, index) => {
                 const angleRed = (index * angleIncrement * Math.PI) / 180;
