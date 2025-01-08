@@ -78,7 +78,7 @@ export const projectsData: IProjectsData[] = [
 
 export interface IBtnList {
   label: string;
-  link: string;
+  link?: string | any; 
   icon: string;
   newTab: boolean;
 }
