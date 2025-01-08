@@ -85,24 +85,24 @@ export interface IBtnList {
 
 export const BtnList: IBtnList[] = [
   { label: "Home", link: "/", icon: "home", newTab: false },
-  { label: "About", link: "/about", icon: "about", newTab: false },
+  { label: "About", link: "/about", icon: "about", newTab: true },
   { label: "Projects", link: "/projects", icon: "projects", newTab: false },
   { label: "Contact", link: "/contact", icon: "contact", newTab: false },
   {
     label: "Github",
-    link: "https://github.com/AliSabet81",
+    link: "https://github.com/satriaaryadiva",
     icon: "github",
     newTab: true,
   },
   {
     label: "LinkedIn",
-    link: "https://www.linkedin.com/in/ali-sabet-443227302",
+    link: "https://www.linkedin.com/in/satria-arya-diva-392428219/",
     icon: "linkedin",
     newTab: true,
   },
   {
     label: "Instagram",
-    link: "https://www.instagram.com/ali._sabet_",
+    link: "https://www.instagram/satriaaryadiva/",
     icon: "instagram",
     newTab: true,
   },
