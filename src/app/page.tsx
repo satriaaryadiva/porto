@@ -9,6 +9,7 @@ export default function Home() {
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-between relative">
+      <Navigation />
       <Image
         src={bg}
         alt="background-image"
@@ -17,15 +18,14 @@ export default function Home() {
         sizes="100vw"
         className="-z-50 w-full h-full object-cover object-center opacity-40"
       />
-      <div className="flex flex-col items-center justify-center ">
       <Welcome/>
       <div className="w-full h-screen">
         
         <RenderModel>
-        <Navigation />
+        
           <Harry />
         </RenderModel>
-      </div></div>
+      </div>
     </main>
   );
 }
