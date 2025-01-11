@@ -30,11 +30,11 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="font-mono bg-gray-800 text-lg sm:text-xl md:text-2xl text-accent"
+      className="font-mono fixed top-2 bg-gray-800 p-2 text-lg sm:text-xl md:text-xl text-accent"
     >
       {displayedText}
       <motion.span
-        className="inline-block bg-accent w-2 h-6 md:h-7 sm:w-2.5 ml-1"
+        className="inline-block bg-accent w-6 h-2 md:h-7 sm:w-2.5 ml-1"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
