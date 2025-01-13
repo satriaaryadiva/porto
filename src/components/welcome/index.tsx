@@ -9,10 +9,10 @@ const Welcome = () => {
       flex items-center justify-start text-left bg-opacity-15 
       h-fit w-fit
         top-1 
-      sm:top-auto sm:left-auto sm:bottom-4 sm:right-4"
+      sm:top-auto sm:left-auto sm:bottom-4 sm:right-auto   "
     >
     <TypingAnimation
-  text="Hello, I'm  Satria , I'm a web developer. Click the button below to know more 📈🚀"
+  text="Hello, I'm  Satria , I'm a web developer. Click the floating button   to know more 📈🚀"
   speed={100}
 />
 
