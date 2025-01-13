@@ -1,14 +1,21 @@
 "use client";
- 
 
-
- import TypingAnimation from "./TypingAnimation";
+import TypingAnimation from "./TypingAnimation";
 
 const Welcome = () => {
-  
   return (
-    <div className="flex fixed sm:text-2xl w-4/5 h-fit  sm:w-20 sm:h-40 z-50 bg-opacity-15 justify-center sm:justify-end sm:text-wrap   m-auto   text-sm items-center       text-left  mt-20 bg-gray-900 text-white">
-      <TypingAnimation text="Hello,i'm satria, i'm a web developer , click the button below to see my work  " speed={120} />
+    <div
+      className="fixed z-50 text-white font-bold text-sm sm:text-2xl 
+      flex items-center justify-start text-left bg-opacity-15 
+      h-fit w-fit
+        top-1 
+      sm:top-auto sm:left-auto sm:bottom-4 sm:right-4"
+    >
+    <TypingAnimation
+  text="Hello, I'm  Satria , I'm a web developer. Click the button below to know more 📈🚀"
+  speed={100}
+/>
+
     </div>
   );
 };
