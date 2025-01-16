@@ -14,11 +14,10 @@ export default function Home() {
         src={bg}
         alt="background-image"
         fill
-        priority
+        fetchPriority="high"
         sizes="100vw"
         className="-z-50 w-full h-full object-cover object-center opacity-40"
       />
-      <Welcome/>
       <div className="w-full h-screen">
         
         <RenderModel>
@@ -26,6 +25,8 @@ export default function Home() {
           <Harry />
         </RenderModel>
       </div>
+      <Welcome/>
+      
     </main>
   );
 }
