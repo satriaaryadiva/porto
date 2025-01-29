@@ -41,7 +41,7 @@ const AboutDetails = () => {
           <img
             className="w-full h-auto"
             src="https://github-readme-stats.vercel.app/api/top-langs?username=satriaaryadiva&theme=transparent&hide_border=true&title_color=5BBFFE&text_color=FFFFFF&icon_color=5BBFFE&text_bold=false"
-            alt="AliSabet"
+            alt="Satria arya diva"
             loading="lazy"
           />
         </ItemLayout>
@@ -50,7 +50,7 @@ const AboutDetails = () => {
           <img
             className="w-full h-auto"
             src="https://github-readme-stats.vercel.app/api?username=satriaaryadiva&theme=transparent&hide_border=true&title_color=5BBFFE&text_color=FFFFFF&icon_color=5BBFFE&text_bold=false"
-            alt="AliSabet"
+            alt="Satria arya diva"
             loading="lazy"
           />
         </ItemLayout>
@@ -66,7 +66,7 @@ const AboutDetails = () => {
           <img
             className="w-full h-auto"
             src="https://github-readme-streak-stats.herokuapp.com?user=satriaaryadiva&theme=dark&hide_border=true&type=png&background=EB545400&ring=5BBFFE&currStreakLabel=5BBFFE"
-            alt="SAtria"
+            alt="Satria"
             loading="lazy"
           />
         </ItemLayout>

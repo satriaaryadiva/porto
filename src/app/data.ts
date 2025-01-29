@@ -22,21 +22,24 @@ export interface IProjectsData {
   description: string;
   date: string;
   demoLink: string;
+  image : string ;
 }
 
 export const projectsData: IProjectsData[] = [
   {
     id: 1,
-    name: "Inja",
-    description: "House Reservation",
-    date: "2023-04-15",
-    demoLink: "https://inja.homes/",
+    name: "Ngerental",
+    description: " Car Rental App ",
+    date: "2024-04-15",
+    image: "/image/ngerental.jpeg",
+    demoLink: "https://ngerental.vercel.app/",
   },
   {
     id: 2,
     name: "Dev Overflow",
     description: "Stack overflow clone",
     date: "2024-03-27",
+    image: "/image/devoverflow.png",
     demoLink: "https://next-js-training-henna.vercel.app/",
   },
   {
@@ -45,6 +48,7 @@ export const projectsData: IProjectsData[] = [
     description: "WhatsApp clone",
     date: "2023-12-30",
     demoLink: "https://github.com/OpenWChat",
+    image: "/image/openwchat.png",
   },
   {
     id: 4,
@@ -52,28 +56,9 @@ export const projectsData: IProjectsData[] = [
     description: "Mern Stack Shop",
     date: "2023-06-12",
     demoLink: "https://github.com/AliSabet81/Shoppe",
+    image: "/image/shoppe.png",
   },
-  {
-    id: 5,
-    name: "Aora",
-    description: "React Native Training",
-    date: "2024-04-15",
-    demoLink: "https://github.com/AliSabet81/React-native-crash-course",
-  },
-  {
-    id: 6,
-    name: "Open Twitch",
-    description: "Twitch Clone",
-    date: "2024-03-10",
-    demoLink: "https://github.com/Open-Twitch",
-  },
-  {
-    id: 7,
-    name: "3D portofolio",
-    description: "This portofolio Project",
-    date: "2024-04-26",
-    demoLink: "https://github.com/AliSabet81/creative-portofolio",
-  },
+  
 ];
 
 export interface IBtnList {

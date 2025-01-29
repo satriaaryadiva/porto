@@ -1,36 +1,59 @@
-'use client'
-import { IProjectsData } from "@/app/data";
+'use client';
+
+import {   projectsData } from "@/app/data";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+
 
 const item = {
-  hidden: {
-    opacity: 0,
-    y: 100,
-  },
+  hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 };
 
-const NavLink = motion(Link);
-const ProjectLayout = ({ name, description, date, demoLink }:IProjectsData) => {
+const ProjectList = () => {
   return (
-    <NavLink
-      variants={item}
-      href={demoLink}
-      target="_blank"
-      className="text-sm  bg-slate-600 md:text-base flex items-center justify-between w-full relative rounded-lg overflow-hidden p-4 md:p-6  "
+    <motion.div
+      initial="hidden"
+      animate="show"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 gap-8 p-6 md:p-10"
     >
-      <div className="flex items-center justify-center space-x-2">
-        <h2 className="text-foreground">{name}</h2>
-        <p className="text-muted hidden sm:inline-block">{description}</p>
-      </div>
-      <div className="self-end flex-1 mx-2 mb-1 bg-transparent border-b border-dashed border-muted" />
-      <p className="text-muted sm:wtext-foreground">
-        {new Date(date).toDateString()}
-      </p>
-    </NavLink>
+      {projectsData.map((project) => (
+        <motion.div
+          key={project.id}
+          variants={item}
+          className="bg-background bg-gray-900  rounded-lg shadow-md      hover:scale-105 transition-transform duration-300 transform ease-in-out hover:shadow-xl"
+        >
+          {/* Project Image */}
+          <Image
+            src={project.image}
+            alt={project.name}
+            width={500}
+            height={300}
+            className="w-full h-64 object-cover"
+          />
+
+          {/* Project Details */}
+          <div className="p-4">
+            <h3 className="text-lg font-semibold text-accent mb-2">{project.name}</h3>
+            <p className="text-sm text-muted mb-4">{project.description}</p>
+            <p className="text-xs text-foreground mb-2">
+              Date: {new Date(project.date).toDateString()}
+            </p>
+            <Link
+              name="link"
+              href={project.demoLink}
+              target="_blank"
+              className="text-sm text-accent underline"
+            >
+              View Demo
+            </Link>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
   );
 };
 
-export default ProjectLayout;
+export default ProjectList;
