@@ -42,7 +42,6 @@ const ProjectList = () => {
               Date: {new Date(project.date).toDateString()}
             </p>
             <Link
-              name="link"
               href={project.demoLink}
               target="_blank"
               className="text-sm text-accent underline"
