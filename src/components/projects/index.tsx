@@ -50,7 +50,8 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
             <Link
               href={project.demoLink}
               target="_blank"
-              className="inline-block px-4 py-2 mt-4 text-sm font-semibold text-center text-gray-900 bg-accent rounded-lg hover:bg-accent/90" name={"sequence"}            >
+              name={project.name}
+              className="inline-block px-4 py-2 mt-4 text-sm font-semibold text-center text-gray-900 bg-accent rounded-lg hover:bg-accent/90"            >
               View Demo
             </Link>
           </div>
