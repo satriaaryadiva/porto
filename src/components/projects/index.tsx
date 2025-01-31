@@ -1,6 +1,6 @@
 'use client';
 
-import { IProjectsData } from "@/app/data";
+import {   IProjectsData } from "@/app/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,19 +24,20 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
+
 const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
   return (
     <motion.div
       variants={container}
       initial="hidden"
       animate="show"
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-10 md:px-12 lg:px-16 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white"
+      className="grid grid-cols-1 sm:grid-cols-2 mx-4 lg:grid-cols-3 w-full gap-8 px-6 py-10 md:px-12 lg:px-16 bg-gradient-to-b   text-white"
     >
       {projects.map((project) => (
         <motion.div
           key={project.id}
           variants={item}
-          className="relative bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-gray-700"
+          className="relative bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl w-full hover:bg-gray-700"
         >
           <div className="relative w-full h-64">
             <Image src={project.image} alt={project.name} fill className="object-cover" />

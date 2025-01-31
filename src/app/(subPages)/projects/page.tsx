@@ -1,7 +1,7 @@
 import Image from "next/image";
 import bg from "../../../../public/background/projects-background.png";
 import ProjectList from "@/components/projects";
-import { projectsData } from "../../data";
+import { projectsData } from "@/app/data";
 import RenderModel from "@/components/RenderModel";
 import { Laptop } from "@/components/models/Laptop";
 
