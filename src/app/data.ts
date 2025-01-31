@@ -31,7 +31,7 @@ export const projectsData: IProjectsData[] = [
     name: "Ngerental",
     description: " Car Rental App ",
     date: "2024-04-15",
-    image: "/image/ngerental.jpeg",
+    image: "/image/Ngerental.jpeg",
     demoLink: "https://ngerental.vercel.app/",
   },
   {

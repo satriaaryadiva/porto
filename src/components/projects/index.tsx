@@ -46,7 +46,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
             <h3 className="text-xl font-bold text-accent">{project.name}</h3>
             <p className="text-sm text-gray-400">{project.description}</p>
             <p className="text-xs text-gray-500">
-              Released on: {new Date(project.date).toLocaleDateString()}
+              Released on: {project.date}
             </p>
             <Link
               href={project.demoLink}
