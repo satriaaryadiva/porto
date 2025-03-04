@@ -15,11 +15,10 @@ const container = {
     },
   },
 };
+
 const item = {
-  hidden: {
-    scale: 0,
-  },
-  show: { scale: 1 },
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 interface FormData {
@@ -32,11 +31,12 @@ const Form = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>();
 
-  const sendEmail = (params: Record<string, unknown> | undefined) => {
-    const toastId = toast.loading("Sending your message, please wait...");
+  const sendEmail = (params: Record<string, unknown>) => {
+    const toastId = toast.loading("Mengirim pesan...");
     emailjs
       .send(
         process.env.NEXT_PUBLIC_SERVICE_ID ?? "",
@@ -44,112 +44,102 @@ const Form = () => {
         params,
         {
           publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-          limitRate: {
-            throttle: 10000,
-          },
+          limitRate: { throttle: 10000 },
         }
       )
-      .then(
-        () => {
-          toast.success(
-            "I have recevied your message, I will get back to you soon!",
-            {
-              id: toastId,
-            }
-          );
-        },
-        (error) => {
-          toast.error(
-            "There was an error sending your message, please try again later!",
-            {
-              id: toastId,
-            }
-          );
-          console.log("FAILED...", error.text);
-        }
-      );
+      .then(() => {
+      
+        toast.success("I have recevied your message, I will get back to you soon!", { id: toastId });
+        reset()
+      })
+      .catch((error) => {
+        toast.error("Terjadi kesalahan saat mengirim pesan. Silakan coba lagi nanti.", { id: toastId });
+        console.error("FAILED...", error.message);
+      });
   };
+
+  const getFormattedDate = () => {
+    const now = new Date();
+    return {
+      sent_day: now.toLocaleDateString("id-ID", { weekday: "long" }),
+      sent_date: now.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" }),
+      sent_time: now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", hour12: false }),
+    };
+  };
+
   const onSubmit = (data: FormData) => {
-    const temlpateParams = {
-      to_name: "Ali Sabet",
+    const { sent_day, sent_date, sent_time } = getFormattedDate();
+
+    sendEmail({
+      to_name: "Satria Arya",
       from_name: data.name,
       reply_to: data.email,
       message: data.message,
-    };
-    sendEmail(temlpateParams);
+      sent_day,
+      sent_date,
+      sent_time,
+    });
   };
 
   return (
     <>
       <Toaster richColors={true} />
-      <motion.form
+      <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        onSubmit={handleSubmit(onSubmit)}
-        className="max-w-md w-full flex flex-col items-center justify-center space-y-4"
+        className="max-w-lg w-full  bg-slate-900 shadow-xl rounded-2xl p-6 space-y-4 border border-cyan-300"
       >
-        <motion.input
-          type="text"
-          variants={item}
-          placeholder="name"
-          {...register("name", {
-            required: "This flied is required!",
-            minLength: {
-              value: 3,
-              message: "Name should be atleast 3 characters long.",
-            },
-          })}
-          className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
-        />
-        {errors.name && (
-          <span className="inline-block self-start text-accent">
-            {errors.name.message}
-          </span>
-        )}
-        <motion.input
-          variants={item}
-          type="email"
-          placeholder="email"
-          {...register("email", { required: "This flied is required!" })}
-          className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
-        />
-        {errors.email && (
-          <span className="inline-block self-start text-accent">
-            {errors.email.message}
-          </span>
-        )}
+        <h2 className="text-2xl font-semibold text-white text-center">Hubungi Saya</h2>
+        <p className="text-white text-center">Silakan isi formulir di bawah ini</p>
+        <motion.form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <motion.div variants={item}>
+            <input
+              type="text"
+              {...register("name", {
+                required: "Nama wajib diisi!",
+                minLength: { value: 3, message: "Nama minimal 3 karakter." },
+              })}
+              placeholder="Nama Anda"
+              className="w-full p-3 border bg-gray-600 border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+          </motion.div>
 
-        <motion.textarea
-          variants={item}
-          placeholder="message"
-          {...register("message", {
-            required: "This flied is required!",
-            maxLength: {
-              value: 500,
-              message: "Name should be less than 500 characters long.",
-            },
-            minLength: {
-              value: 50,
-              message: "Name should be more than 50 characters long.",
-            },
-          })}
-          className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
-        />
-        {errors.message && (
-          <span className="inline-block self-start text-accent">
-            {errors.message.message}
-          </span>
-        )}
+          <motion.div variants={item}>
+            <input
+              type="email"
+              {...register("email", { required: "Email wajib diisi!" })}
+              placeholder="Email Anda"
+              className="w-full p-3 border bg-gray-600 border-cyan-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+          </motion.div>
 
-        <motion.input
-          variants={item}
-          value="Deploy your message!"
-          className="px-10 py-4 rounded-md shadow-lg bg-background border border-accent/30 border-solid hover:shadow-glass-sm backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 cursor-pointer capitalize"
-          type="submit"
-        />
-      </motion.form>
+          <motion.div variants={item}>
+            <textarea
+              {...register("message", {
+                required: "Pesan wajib diisi!",
+                minLength: { value: 30, message: "Pesan minimal 30 karakter." },
+                maxLength: { value: 500, message: "Pesan maksimal 500 karakter." },
+              })}
+              placeholder="Pesan Anda"
+              className="w-full p-3 border bg-gray-600 border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none h-32 resize-none"
+            />
+            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+          </motion.div>
+
+          <motion.button
+            variants={item}
+            type="submit"
+            className="w-full p-3 bg-blue-600 text-white rounded-lg font-medium shadow-md hover:bg-blue-700 transition duration-300"
+          >
+            Kirim Pesan
+          </motion.button>
+        </motion.form>
+      </motion.div>
     </>
   );
 };
+
 export default Form;
