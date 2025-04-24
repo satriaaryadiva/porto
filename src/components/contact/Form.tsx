@@ -37,8 +37,7 @@ const Form = () => {
 
   const sendEmail = (params: Record<string, unknown>) => {
     const toastId = toast.loading("Mengirim pesan...");
-    emailjs
-      .send(
+    emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID ?? "",
         process.env.NEXT_PUBLIC_TEMPLATE_ID ?? "",
         params,
