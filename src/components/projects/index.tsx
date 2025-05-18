@@ -51,9 +51,12 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
 
           <div className="p-6 space-y-4">
             <h3 className="text-xl font-bold text-accent">{project.name}</h3>
+           
             <p className="text-sm text-gray-400">{project.description}</p>
+            <p className="text-sm text-gray-400">{project.tools}</p>
             <p className="text-xs text-gray-500">
               Released on: {new Date(project.date).toLocaleDateString()}
+              
             </p>
 
             <Link

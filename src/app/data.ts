@@ -21,6 +21,7 @@ export interface IProjectsData {
   name: string;
   description: string;
   date: string;
+  tools: string;
   demoLink: string;
   image : string ;
 }
@@ -32,6 +33,7 @@ export const projectsData: IProjectsData[] = [
     description: " Car Rental App ",
     date: "2024-04-15",
     image: "/image/Ngerental.jpeg",
+    tools: "Next.js, Tailwind CSS , Redux Toolkit",
     demoLink: "https://ngerental.vercel.app/",
   },
   {
@@ -40,20 +42,23 @@ export const projectsData: IProjectsData[] = [
     description: "e-commerce app",
     date: "2024-05-27",
     image: "/image/lovague.jpg",
+    tools: "Next.js, Tailwind CSS , Redux Toolkit",
     demoLink: "https://lovague.vercel.app/",
   },
   {
     id: 3,
     name: "Webziu",
     description: "Company profile website",
+    tools: "Next.js, Tailwind CSS",
     date: "2024-12-30",
-    demoLink: "",
+    demoLink: "https://webziu.vercel.app/",
     image: "/image/webziu.jpg",
   },
   {
     id: 4,
     name: "Wedding Invitation",
     description: "customizable wedding invitation",
+    tools: "Next.js, Tailwind CSS",
     date: "2025-05-10",
     demoLink: "https://satriafania.vercel.app/undangan/20%",
     image: "/image/wedding.jpg",
