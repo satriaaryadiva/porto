@@ -18,14 +18,9 @@ export default function Contact() {
             Connect and Hire: Connect & Collaborate
           </h1>
           <p className="text-center font-light text-sm xs:text-base">
-            Venture forth into the realm of boundless collaboration, where
-            pixels and code converge. Whether you&apos;re a valiant ally seeking
-            to embark on daring joint quests, an inquisitive seeker of the
-            arcane secrets behind the digital veil, or a bard eager to exchange
-            tales of triumph and tribulation, your missives are cherished
-            artifacts in this hallowed cyberspace. Deploy the form below to
-            dispatch your communications across the great network, and
-            anticipate the hum of a connection in response.
+          Whether you have a project in mind, want to discuss a potential collaboration, 
+            or simply wish to connect — I’d love to hear from you. Fill out the form below and 
+            I’ll get back to you as soon as possible. Let’s create something amazing together.
           </p>
         </div>
         <Form />

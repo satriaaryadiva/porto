@@ -8,19 +8,14 @@ const AboutDetails = () => {
       <div className="grid grid-cols-12 xs:gap-6  gap-5 - md:gap-8 w-full m-auto">
         <ItemLayout className="col-span-full  lg:col-span-8 row-span-2 text-wrap flex-col items-start">
           <h2 className="text-xl font-semibold md:text-2xl text-left w-full capitalize">
-            The Coding Gamer: Leveling Up in Web Development
+        Leveling Up in Web Development
           </h2>
           <p className="  text-sm sm:text-sm md:text-base  font-bold">
-            My web development quest is fueled by an arsenal of powerful tools
-            and languages, with JavaScript serving as my primary weapon. I
-            expertly wield frameworks like React.js and Next.js to build
-            immersive digital realms (websites) that connect players (users)
-            across the vast cyberspace. The dynamic art of Jamstack empowers me
-            to create fast, secure, and captivating experiences, ensuring every
-            adventure is not only functional but visually stunning. As I
-            continue to conquer new challenges and explore emerging
-            technologies, join me in shaping the future of the web - one
-            thrilling line of code at a time.
+          Perjalanan saya di dunia pengembangan web berawal dari rasa ingin tahu dan berkembang menjadi semangat untuk menciptakan solusi digital yang berdampak. Dengan JavaScript sebagai fondasi utama, saya membangun antarmuka yang interaktif dan modern menggunakan framework seperti React.js dan Next.js.
+
+Saya menerapkan pendekatan Jamstack untuk menciptakan website yang cepat, aman, dan ramah pengguna — menggabungkan keindahan desain dengan performa tinggi. Setiap proyek yang saya kerjakan adalah cerminan dari komitmen saya terhadap detail, efisiensi, dan pengalaman pengguna yang optimal.
+
+Saya terus mengikuti perkembangan teknologi terbaru, siap menghadapi tantangan baru, dan terbuka untuk berkolaborasi dalam membangun masa depan web yang lebih baik.
           </p>
         </ItemLayout>
         <ItemLayout className="col-span-full xs:col-span-6 lg:col-span-4 text-accent">
@@ -30,7 +25,7 @@ const AboutDetails = () => {
         </ItemLayout>
         <ItemLayout className="col-span-full xs:col-span-6 lg:col-span-4 text-accent">
           <p className="font-semibold w-full text-left text-2xl sm:text-5xl">
-            1+{" "}
+            2+{" "}
             <sub className="font-semibold text-base">years of experience</sub>
           </p>
         </ItemLayout>
@@ -75,7 +70,7 @@ const AboutDetails = () => {
           <img
             className="w-full h-auto"
             src="https://github-readme-stats.vercel.app/api/pin/?username=satriaaryadiva&repo=car-rental&theme=transparent&hide_border=true&title_color=5BBFFE&text_color=FFFFFF&icon_color=5BBFFE&text_bold=false"
-            alt="AliSabet"
+            alt="Satria arya diva"
             loading="lazy"
           />
         </ItemLayout>

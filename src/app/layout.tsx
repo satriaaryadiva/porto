@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Saya Satria Arya Diva, seorang Front-End Developer yang berdedikasi untuk menciptakan pengalaman pengguna yang luar biasa.",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
