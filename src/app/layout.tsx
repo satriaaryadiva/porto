@@ -4,6 +4,7 @@ import "./globals.css";
 import clsx from "clsx";
 import FireFliesBackground from "@/components/FireFliesBackground";
 import Sound from "@/components/Sound";
+import { Analytics } from "@vercel/analytics/next";
 
  
 
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx("bg-background  text-foreground   font-default")}>
+        <Analytics/>
         {children}
         <FireFliesBackground />
         <Sound />
