@@ -63,6 +63,16 @@ export const projectsData: IProjectsData[] = [
     demoLink: "https://satriafania.vercel.app/undangan/20%",
     image: "/image/wedding.jpg",
   },
+   {
+    id: 5,
+    name: "Decoor Landing Page",
+    description: "Landing page for home decor",
+    tools: "Next.js, Tailwind CSS",
+    date: "2025-05-10",
+    demoLink: "https://decoor.vercel.app/",
+    image: "/image/decoor.png",
+    
+  },
   
 ];
 
