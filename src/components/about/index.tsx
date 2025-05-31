@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
  
+import Link from "next/link";
 import ItemLayout from "./ItemLayout";
 
 const AboutDetails = () => {
@@ -18,11 +19,16 @@ Saya menerapkan pendekatan Jamstack untuk menciptakan website yang cepat, aman, 
 Saya terus mengikuti perkembangan teknologi terbaru, siap menghadapi tantangan baru, dan terbuka untuk berkolaborasi dalam membangun masa depan web yang lebih baik.
           </p>
         </ItemLayout>
-        <ItemLayout className="col-span-full xs:col-span-6 lg:col-span-4 text-accent">
-          <p className="font-semibold w-full text-left text-2xl sm:text-5xl">
-            7+ <sub className="font-semibold text-base">projects</sub>
-          </p>
-        </ItemLayout>
+
+       
+          <ItemLayout className="col-span-full xs:col-span-6 lg:col-span-4 text-accent">
+             <Link href="/projects" target="_blank">   
+            <p className="font-semibold w-full text-left text-2xl sm:text-5xl">
+              7+ <sub className="font-semibold text-base">projects</sub>
+            </p>
+            </Link>
+          </ItemLayout>
+        
         <ItemLayout className="col-span-full xs:col-span-6 lg:col-span-4 text-accent">
           <p className="font-semibold w-full text-left text-2xl sm:text-5xl">
             2+{" "}
@@ -50,9 +56,6 @@ Saya terus mengikuti perkembangan teknologi terbaru, siap menghadapi tantangan b
           />
         </ItemLayout>
         <ItemLayout className={"col-span-full"}>
-          <h2 className="text-xl font-semibold md:text-2xl text-left w-full capitalize">
-            Skills
-          </h2>
           <img
             className="w-full h-auto"
             src="https://skillicons.dev/icons?i=js,html,css,scss,discord,express,git,github,linkedin,firebase,nextjs,nodejs,npm,react,stackoverflow,tailwind,ts,vite,vscode,yarn"

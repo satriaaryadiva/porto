@@ -5,17 +5,18 @@ import { useFrame } from "@react-three/fiber";
 
 export default function Harry(props: any) {
   const { nodes, materials } = useGLTF("/models/scene-transformed.glb");
+  const modelRef = useRef<any>(null);
 
-  const modelRef = useRef();
-
-  useFrame((state, delta, xsFrame) => {
-    (modelRef.current as any).position.y =
-      -2 + Math.sin(state.clock.elapsedTime) * 0.15;
+  useFrame((state) => {
+    const model = modelRef.current;
+    if (model) {
+      model.position.y = -2 + Math.sin(state.clock.elapsedTime) * 0.15;
+    }
   });
+
   return (
     <group
       {...props}
-      dispose={null}
       ref={modelRef}
       position={[0, -2, 0]}
       scale={[2, 2, 2]}
