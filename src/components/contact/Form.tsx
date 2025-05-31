@@ -22,6 +22,7 @@ const item = {
 };
 
 interface FormData {
+  id: string;
   name: string;
   email: string;
   message: string;
@@ -29,6 +30,7 @@ interface FormData {
 
 const Form = () => {
   const {
+    
     register,
     handleSubmit,
     reset,
@@ -83,7 +85,7 @@ const Form = () => {
   return (
     <>
       <Toaster richColors={true} />
-      <motion.div
+      <motion.div 
         variants={container}
         initial="hidden"
         animate="show"
@@ -91,8 +93,9 @@ const Form = () => {
       >
         <h2 className="text-2xl font-semibold text-white text-center">Hubungi Saya</h2>
         <p className="text-white text-center">Silakan isi formulir di bawah ini</p>
-        <motion.form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <motion.form id={"form"} onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <motion.div variants={item}>
+             
             <input
               type="text"
               {...register("name", {

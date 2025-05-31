@@ -19,7 +19,7 @@ export default function Home() {
         className="-z-50 w-full h-full object-cover object-center opacity-40"
       />
       <div className="w-full h-screen">
-        
+ 
         <RenderModel>
         
           <Harry />

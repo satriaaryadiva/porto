@@ -50,6 +50,9 @@ Saya terus mengikuti perkembangan teknologi terbaru, siap menghadapi tantangan b
           />
         </ItemLayout>
         <ItemLayout className={"col-span-full"}>
+          <h2 className="text-xl font-semibold md:text-2xl text-left w-full capitalize">
+            Skills
+          </h2>
           <img
             className="w-full h-auto"
             src="https://skillicons.dev/icons?i=js,html,css,scss,discord,express,git,github,linkedin,firebase,nextjs,nodejs,npm,react,stackoverflow,tailwind,ts,vite,vscode,yarn"
