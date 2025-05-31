@@ -15,7 +15,7 @@ export default function Contact() {
       />
       <article className="relative w-full flex flex-col items-center justify-center py-8 sm:py-0 space-y-8">
         <div className="flex flex-col        items-center justify-center space-y-6 w-full  ">
-          <h1 className="text-accent bg-clip-text  bg-slate-500   font-semibold text-center text-2xl sm:text-4xl capitalize">
+          <h1 className="text-accent bg-clip-text  bg-slate-500   font-bold text-center text-2xl sm:text-4xl capitalize">
             Connect and Hire: Connect & Collaborate
           </h1>
           <p className="text-left font-semibold   sm:w-1/2 text-sm xs:text-base">

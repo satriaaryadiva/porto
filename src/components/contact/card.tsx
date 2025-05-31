@@ -10,7 +10,7 @@ const cards = [
     target: "_blank",
     desc: "Chat with me directly",
     action: "Send Message →",
-    link: "https://wa.me/6281234567890", // Ganti dengan nomor kamu
+    link: "https://wa.me/6283867691938", // Ganti dengan nomor kamu
     color: "text-green-500",
   },
   {
@@ -28,7 +28,7 @@ const cards = [
     target: "_blank",
     desc: "Connect professionally",
     action: "Connect →",
-    link: "https://linkedin.com/in/yourprofile", // Ganti dengan profil kamu
+    link: "https://linkedin.com/in/satria-arya-diva-392428219/", // Ganti dengan profil kamu
     color: "text-blue-600",
   },
 ];
