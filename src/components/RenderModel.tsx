@@ -1,12 +1,14 @@
 "use client";
-import { Environment, OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import clsx from "clsx";
-import React, { ReactNode, Suspense, useRef } from "react";
 
-// Grup kamera cinematic: gerakan lambat memutar
+import React, { ReactNode, useRef, Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Environment, OrbitControls } from "@react-three/drei";
+import * as THREE from "three";
+import clsx from "clsx";
+
+// Kamera cinematic: memutar lambat pada sumbu Y
 const CinematicRig = ({ children }: { children: ReactNode }) => {
-  const groupRef = useRef<any>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
     if (groupRef.current) {
@@ -36,11 +38,10 @@ const RenderModel = ({
           position={[5, 10, 5]}
           intensity={1.5}
           castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
+          shadow-mapSize={{ width: 1024, height: 1024 }}
         />
         <CinematicRig>{children}</CinematicRig>
-        <Environment preset="sunset" />
+        <Environment preset="dawn" backgroundBlurriness={10} />
         <OrbitControls enableZoom={false} />
       </Suspense>
     </Canvas>

@@ -4,6 +4,8 @@ import RenderModel from "@/components/RenderModel";
 import Navigation from "@/components/navigation";
 import Harry from "@/components/models/Harry";
 import Welcome from "@/components/welcome";
+import Spartan from "@/components/models/Harry";
+import AnimeMaleModel from "@/components/models/Harry";
 
 export default function Home() {
   
@@ -21,12 +23,12 @@ export default function Home() {
       <div className="w-full h-screen">
  
         <RenderModel>
-        
-          <Harry />
+
+          <AnimeMaleModel/>
         </RenderModel>
       </div>
-      <Welcome/>
-      
+      <Welcome />
+
     </main>
   );
 }
