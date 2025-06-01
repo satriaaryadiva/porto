@@ -25,8 +25,7 @@ const  Navigation = () => {
   const isMedium = size >= 768;
 
   return (
-  <div className="w-full absolute inset-0 h-full z-10 flex items-center font-black justify-center">
-
+    <div className="w-full fixed h-screen flex items-center font-black  justify-center">
       <ResponsiveComponent>
         {({ size }: { size: number }) => {
           return size && size >= 480 ? (

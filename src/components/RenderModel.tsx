@@ -1,5 +1,5 @@
 "use client";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
 import React, { ReactNode, Suspense } from "react";
@@ -13,15 +13,11 @@ const RenderModel = ({
 }) => {
   return (
     <Canvas
-      className={clsx("absolute bg-red-400 opacity-35 inset-0 w-fit h-fit z-50", className)}
+      className={clsx("absolute inset-0 w-full h-full z-0", className)}
       camera={{ position: [0, 0, 5], fov: 65 }}
     >
-      <Suspense fallback={null}>
-        <ambientLight intensity={0.5} />
-        <Environment preset="dawn" />
-        {children}
-        <OrbitControls enableZoom={true} />
-      </Suspense>
+      <Suspense fallback={null}>{children}</Suspense>
+      <Environment preset="dawn" />
     </Canvas>
   );
 };

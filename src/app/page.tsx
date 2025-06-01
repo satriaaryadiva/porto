@@ -6,8 +6,10 @@ import Harry from "@/components/models/Harry";
 import Welcome from "@/components/welcome";
 
 export default function Home() {
+  
   return (
-    <main className="flex min-h-screen scroll-smooth flex-col items-center justify-between relative overflow-hidden">
+    <main className="flex min-h-screen scroll-smooth flex-col items-center justify-between relative">
+      <Navigation />
       <Image
         src={bg}
         alt="background-image"
@@ -16,16 +18,15 @@ export default function Home() {
         sizes="100vw"
         className="-z-50 w-full h-full object-cover object-center opacity-40"
       />
-
-      <div className="w-full h-screen relative z-10">
+      <div className="w-full h-screen">
+ 
         <RenderModel>
+        
           <Harry />
         </RenderModel>
-        <Navigation />
       </div>
-
-      <Welcome />
+      <Welcome/>
+      
     </main>
   );
 }
-

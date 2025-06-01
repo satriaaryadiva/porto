@@ -1,16 +1,44 @@
-"use client";
-import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+'use client';
+
+import React, { useRef, useEffect } from 'react';
+import { useGLTF } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
 
 export default function Harry(props: any) {
-  const { nodes, materials } = useGLTF("/models/scene-transformed.glb");
-  const modelRef = useRef<any>(null);
+  const { nodes, materials } = useGLTF('/models/scene-transformed.glb');
+  const modelRef = useRef<THREE.Group>(null);
+  const mouse = useRef({ x: 0, y: 0 });
 
+  // Handle pergerakan mouse
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const x = (event.clientX / window.innerWidth) * 2 - 1;
+      const y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.current = { x, y };
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Animasi real-time
   useFrame((state) => {
     const model = modelRef.current;
     if (model) {
-      model.position.y = -2 + Math.sin(state.clock.elapsedTime) * 0.15;
+      const t = state.clock.getElapsedTime();
+
+      // Idle: Floating, breathing effect
+      model.position.y = -2 + Math.sin(t * 2) * 0.1;
+
+      // Sedikit tilt Z untuk efek realisme
+      model.rotation.z = Math.sin(t * 1.5) * 0.02;
+
+      // Mouse-controlled rotation
+      const targetY = mouse.current.x * 0.5; // rotasi Y
+      const targetX = mouse.current.y * 0.3; // rotasi X
+      model.rotation.y += (targetY - model.rotation.y) * 0.1;
+      model.rotation.x += (targetX - model.rotation.x) * 0.1;
     }
   });
 
@@ -77,4 +105,4 @@ export default function Harry(props: any) {
   );
 }
 
-useGLTF.preload("/models/scene-transformed.glb");
+useGLTF.preload('/models/scene-transformed.glb');
