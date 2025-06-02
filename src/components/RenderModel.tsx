@@ -1,14 +1,12 @@
 "use client";
-
-import React, { ReactNode, useRef, Suspense } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
-import * as THREE from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
 import clsx from "clsx";
+import React, { ReactNode, Suspense, useRef } from "react";
+import ModelLoader from "./modalLoader";
 
-// Kamera cinematic: memutar lambat pada sumbu Y
 const CinematicRig = ({ children }: { children: ReactNode }) => {
-  const groupRef = useRef<THREE.Group>(null);
+  const groupRef = useRef<any>(null);
 
   useFrame((state) => {
     if (groupRef.current) {
@@ -28,11 +26,11 @@ const RenderModel = ({
 }) => {
   return (
     <Canvas
-      className={clsx("absolute inset-0 w-full h-full -z-30", className)}
+      className={clsx("absolute w-full h-full -z-30", className)}
       shadows
       camera={{ position: [0, 0, 5], fov: 65 }}
     >
-      <Suspense fallback={null}>
+      <Suspense fallback={<ModelLoader />}>
         <ambientLight intensity={0.5} />
         <directionalLight
           position={[5, 10, 5]}
@@ -41,7 +39,7 @@ const RenderModel = ({
           shadow-mapSize={{ width: 1024, height: 1024 }}
         />
         <CinematicRig>{children}</CinematicRig>
-        <Environment preset="dawn" backgroundBlurriness={10} />
+        <Environment preset="apartment" />
         <OrbitControls enableZoom={false} />
       </Suspense>
     </Canvas>
