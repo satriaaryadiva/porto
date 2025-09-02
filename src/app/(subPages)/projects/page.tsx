@@ -2,8 +2,6 @@ import Image from "next/image";
 import bg from "../../../../public/background/projects-background.png";
 import ProjectList from "@/components/projects";
 import { projectsData } from "@/app/data";
-import RenderModel from "@/components/RenderModel";
-import { Laptop } from "@/components/models/Laptop";
 
 export default function Projects() {
   return (
@@ -17,9 +15,7 @@ export default function Projects() {
       />
       <ProjectList projects={projectsData} />
       <div className="w-full fixed h-3/5 xs:h-3/4 sm:h-screen top-1/2 -translate-y-1/2 -z-20 -left-0 lg:-left-1/3">
-        <RenderModel>
-          <Laptop />
-        </RenderModel>
+       
       </div>
     </>
   );

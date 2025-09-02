@@ -54,7 +54,7 @@ const  Navigation = () => {
                 variants={container}
                 initial="hidden"
                 animate="show"
-                className="w-full px-2.5 xs:p-0 flex-col items-start space-y-4 xs:w-max flex xs:items-center justify-center relative group"
+                className="w-full px-2.5 xs:p-0 flex-col  gap-7 items-start space-y-4 xs:w-max flex xs:items-center justify-center relative group"
               >
                 {BtnList.slice(0, BtnList.length / 2).map((btn) => {
                   return <NavButton key={btn.label} x={0} y={0} {...btn} />;
@@ -64,7 +64,7 @@ const  Navigation = () => {
                 variants={container}
                 initial="hidden"
                 animate="show"
-                className="w-full px-2.5 xs:p-0 flex-col items-end space-y-4 xs:w-max flex xs:items-center justify-center relative group"
+                className="w-full px-2.5 xs:p-0 flex-col gap-7 items-end space-y-4 xs:w-max flex xs:items-center justify-center relative group"
               >
                 {BtnList.slice(BtnList.length / 2, BtnList.length).map(
                   (btn) => {

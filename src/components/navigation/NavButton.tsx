@@ -2,6 +2,7 @@ import {
   Github,
   Home,
   Instagram,
+  InstagramIcon,
   Linkedin,
   NotebookText,
   Palette,
@@ -30,7 +31,7 @@ const getIcon = (icon: string) => {
     case "linkedin":
       return <Linkedin className="w-full h-auto" strokeWidth={1.5} />;
     case "instagram":
-      return <Instagram className="w-full h-auto" strokeWidth={1.5} />;
+      return <InstagramIcon className="w-full h-auto" strokeWidth={1.5} />;
     case "resume":
       return <NotebookText className="w-full h-auto" strokeWidth={1.5} />;
     default:
@@ -97,10 +98,10 @@ const NavButton = ({
             >
               <span className="relative w-10 h-10 bg-cyan-300 text-black text-xl rounded-full font-black xs:w-14 xs:h-14 p-2.5 xs:p-4 hover:text-accent">
                 {getIcon(icon)}
-                <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
+                <span className="peer bg-transparent absolute  w-full h-full" />
                 <span
                   className={clsx(
-                    "absolute hidden peer-hover:block px-2 py-1 top-full mx-2  -translate-y-1/2 bg-background text-foreground   text-sm rounded-md border-2 border-white font-extraboldshadow-lg whitespace-nowrap",
+                    "absolute   peer-hover:block px-2 py-1     bg-background text-foreground   text-sm rounded-md border-2 border-white font-extraboldshadow-lg whitespace-nowrap",
                     labelDirection === "left" ? "right-full left-auto" : ""
                   )}
                 >
