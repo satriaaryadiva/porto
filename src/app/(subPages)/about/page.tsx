@@ -43,7 +43,9 @@ export default function About() {
             priority
             className="rounded-full border-4 border-blue-500 shadow-xl"
           />
+            <p className=" text-left  ml-0">hello i am</p>
         </motion.div>
+            
 
         {/* Nama */}
         <motion.h1
