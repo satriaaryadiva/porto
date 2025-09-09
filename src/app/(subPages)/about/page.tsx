@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import RenderModel from "@/components/RenderModel";
 import AboutDetails from "@/components/about";
@@ -5,50 +7,75 @@ import { Headphone } from "@/components/models/about/Headphone";
 import { Mouse } from "@/components/models/about/Mouse";
 import { Controller } from "@/components/models/about/Controller";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <>
-      {/* Subtle Background Models */}
-      <div className="fixed top-0 left-0 -z-50 w-full h-full flex justify-center items-center opacity-10">
-        <RenderModel>
-          <Headphone />
-        </RenderModel>
-        <RenderModel>
-          <Mouse />
-        </RenderModel>
-        <RenderModel>
-          <Controller />
-        </RenderModel>
+      {/* Background Models */}
+      <div className=" top-0 left-0 Z-z-50 w-full h-full opacity-[0.05]">
+        <div className="absolute inset-0 flex justify-center items-center">
+          <RenderModel>
+            <Headphone />
+          </RenderModel>
+          <RenderModel>
+            <Mouse />
+          </RenderModel>
+          <RenderModel>
+            <Controller />
+          </RenderModel>
+        </div>
       </div>
 
       {/* Hero Section */}
       <div className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <div className="animate-fadeInUp">
+        {/* Foto */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <Image
             src="/image/3d-portrait-people.png"
             alt="Satria Arya Diva"
-            width={280}
-            height={280}
+            width={200}
+            height={200}
             priority
-            className="rounded-full shadow-lg"
+            className="rounded-full border-4 border-blue-500 shadow-xl"
           />
-        </div>
+        </motion.div>
 
-        <h1 className="mt-8 font-bold text-4xl sm:text-6xl lg:text-7xl text-gray-900 dark:text-white tracking-tight animate-fadeInUp delay-200">
+        {/* Nama */}
+        <motion.h1
+          className="mt-6 font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+        >
           Satria Arya Diva
-        </h1>
+        </motion.h1>
 
-        <p className="mt-4 max-w-xl text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed animate-fadeInUp delay-400">
-          Front-End Developer yang menciptakan pengalaman digital sederhana,
-          elegan, dan penuh detail.
-        </p>
+        {/* Subtitle */}
+        <motion.p
+          className="mt-4 max-w-lg text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.7 }}
+        >
+          Front-End Developer yang fokus pada UI modern, interaktif, dan penuh
+          detail.
+        </motion.p>
 
         {/* Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-6 animate-fadeInUp delay-600">
+        <motion.div
+          className="mt-10 flex flex-col sm:flex-row gap-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.7 }}
+        >
           <Link
             href="mailto:satriaarya125@gmail.com"
-            className="px-8 py-3 rounded-full font-medium text-white bg-black dark:bg-white dark:text-black hover:opacity-80 transition"
+            className="px-7 py-3 rounded-lg font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
           >
             Hire Me
           </Link>
@@ -56,15 +83,23 @@ export default function About() {
           <Link
             href="https://www.linkedin.com/in/satria-arya-diva"
             target="_blank"
-            className="px-8 py-3 rounded-full font-medium border border-gray-400 dark:border-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            className="px-7 py-3 rounded-lg font-medium border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             Collaboration
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       {/* About Details */}
-      <AboutDetails />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="relative z-10"
+      >
+        <AboutDetails />
+      </motion.div>
     </>
   );
 }
