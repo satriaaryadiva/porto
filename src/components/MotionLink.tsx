@@ -8,9 +8,11 @@ import React, { forwardRef } from "react";
 // bikin motion wrapper yang ngerti <a>
 const MotionLink = motion(
   forwardRef<HTMLAnchorElement, LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>>(
-    ({ children, ...props }, ref) => (
-      <Link ref={ref} {...props}>
-        {children}
+    ({ children, href, ...props }, ref) => (
+      <Link href={href} passHref legacyBehavior>
+        <a ref={ref} {...props}>
+          {children}
+        </a>
       </Link>
     )
   )
