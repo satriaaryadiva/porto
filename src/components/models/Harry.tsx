@@ -6,7 +6,7 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 export default function Spartan(props: any) {
-  const { scene } = useGLTF('');
+const { scene } = useGLTF('/models/spartan_armour_mkv_-_halo_reach.glb');
   const modelRef = useRef<THREE.Group>(null);
   const mouse = useRef({ x: 0, y: 0 });
 

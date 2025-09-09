@@ -60,7 +60,7 @@ export const projectsData: IProjectsData[] = [
     description: "customizable wedding invitation",
     tools: "Next.js, Tailwind CSS",
     date: "2025-05-10",
-    demoLink: "https://satriafania.vercel.app/undangan/20%",
+    demoLink: "https://satriafania.vercel.app/undangan/ha",
     image: "/image/wedding.jpg",
   },
    {

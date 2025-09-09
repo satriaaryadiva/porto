@@ -5,6 +5,7 @@ import Navigation from "@/components/navigation";
   import Welcome from "@/components/welcome";
  
 import AnimeMaleModel from "@/components/models/Harry";
+import FireFliesBackground from "@/components/FireFliesBackground";
  
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen scroll-smooth flex-col items-center justify-between relative">
       <Navigation />
+      <FireFliesBackground />
       <Image
         src={bg}
         alt="background-image"

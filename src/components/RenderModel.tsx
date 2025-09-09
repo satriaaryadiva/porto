@@ -1,20 +1,13 @@
-"use client";
+'use client';
+
 import { Environment, OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
-import React, { ReactNode, Suspense, useRef } from "react";
+import React, { ReactNode, Suspense, useEffect } from "react";
 import ModelLoader from "./modalLoader";
 
 const CinematicRig = ({ children }: { children: ReactNode }) => {
-  const groupRef = useRef<any>(null);
-
-  useFrame((state) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.3;
-    }
-  });
-
-  return <group ref={groupRef}>{children}</group>;
+  return <group>{children}</group>;
 };
 
 const RenderModel = ({
@@ -24,22 +17,39 @@ const RenderModel = ({
   children: ReactNode;
   className?: string;
 }) => {
+  // fix bug ukuran canvas kadang 0
+  useEffect(() => {
+    const resize = () => window.dispatchEvent(new Event("resize"));
+    resize();
+  }, []);
+
   return (
     <Canvas
-      className={clsx("absolute w-full h-full -z-30", className)}
+      className={clsx("fixed w-screen h-screen -z-30 ", className)}
       shadows
       camera={{ position: [0, 0, 5], fov: 65 }}
+      gl={{ preserveDrawingBuffer: true, antialias: true }}
     >
       <Suspense fallback={<ModelLoader />}>
-        <ambientLight intensity={0.5} />
-        <directionalLight
+        {/* Soft ambient light */}
+        <ambientLight intensity={0.3} />
+
+        {/* Dramatic spotlight */}
+        <spotLight
           position={[5, 10, 5]}
-          intensity={1.5}
+          angle={0.3}
+          penumbra={1}
+          intensity={2}
           castShadow
-          shadow-mapSize={{ width: 1024, height: 1024 }}
         />
+
+        {/* Cinematic group */}
         <CinematicRig>{children}</CinematicRig>
-        <Environment preset="apartment" />
+
+        {/* Environment reflection */}
+        <Environment  preset="apartment" background={false} />
+
+        {/* Disable zoom, fokus interaksi mouse */}
         <OrbitControls enableZoom={false} />
       </Suspense>
     </Canvas>
