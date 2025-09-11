@@ -1,7 +1,8 @@
+"use client";
+
 import {
   Github,
   Home,
-  Instagram,
   InstagramIcon,
   Linkedin,
   NotebookText,
@@ -9,12 +10,11 @@ import {
   Phone,
   User,
 } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 import ResponsiveComponent from "../ResponsiveComponent";
 import clsx from "clsx";
-import { motion } from "framer-motion";
 import { IBtnList } from "@/app/data";
+import MotionLink from "../MotionLink"; // kita pakai wrapper MotionLink
 
 const getIcon = (icon: string) => {
   switch (icon) {
@@ -44,8 +44,6 @@ const item = {
   show: { scale: 1 },
 };
 
-const NavLink = motion<any>(Link);
-
 interface INavBtn extends IBtnList {
   x: number | string;
   y: number | string;
@@ -63,55 +61,57 @@ const NavButton = ({
 }: INavBtn) => {
   return (
     <ResponsiveComponent>
-      {({ size }: { size: number }) => {
-        return size && size >= 480 ? (
+      {({ size }: { size: number }) =>
+        size && size >= 480 ? (
           <div
             className="w-fit absolute font-black cursor-pointer z-50"
             style={{ transform: `translate(${x},${y})` }}
           >
-            <NavLink
-              variants={item}
+            <MotionLink
               href={link}
               target={newTab ? "_blank" : "_self"}
+              variants={item}
+              initial="hidden"
+              animate="show"
               className="text-foreground rounded-full flex items-center justify-center custom-bg"
               aria-label={label}
-              name={label}
             >
-              <span className="relative w-14 h-14 p-4 animate-spin-slow-reverse group-hover:pause hover:text-accent bg-cyan-300 rounded-full text-black">
+              <span className="relative w-14 h-14 p-4 animate-spin-slow-reverse hover:text-accent bg-cyan-300 rounded-full text-black">
                 {getIcon(icon)}
-                <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
-                <span className="absolute border-white border-2 border-solid peer-hover:inline-block px-2 py-1 left-full mx-0 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
+                <span className="peer absolute inset-0 bg-transparent" />
+                <span className="absolute border-white border-2 peer-hover:inline-block px-2 py-1 left-full mx-0 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
                   {label}
                 </span>
               </span>
-            </NavLink>
+            </MotionLink>
           </div>
         ) : (
           <div className="cursor-pointer z-50">
-            <NavLink
+            <MotionLink
               href={link}
-              variants={item}
               target={newTab ? "_blank" : "_self"}
-              className="text-foreground rounded-full  font-extrabold flex items-center justify-center custom-bg"
+              variants={item}
+              initial="hidden"
+              animate="show"
+              className="text-foreground rounded-full font-extrabold flex items-center justify-center custom-bg"
               aria-label={label}
-              name={label}
             >
               <span className="relative w-10 h-10 bg-cyan-300 text-black text-xl rounded-full font-black xs:w-14 xs:h-14 p-2.5 xs:p-4 hover:text-accent">
                 {getIcon(icon)}
-                <span className="peer bg-transparent absolute  w-full h-full" />
+                <span className="peer absolute inset-0 bg-transparent" />
                 <span
                   className={clsx(
-                    "absolute   peer-hover:block px-2 py-1     bg-background text-foreground   text-sm rounded-md border-2 border-white font-extraboldshadow-lg whitespace-nowrap",
+                    "absolute peer-hover:block px-2 py-1 bg-background text-foreground text-sm rounded-md border-2 border-white font-extrabold shadow-lg whitespace-nowrap",
                     labelDirection === "left" ? "right-full left-auto" : ""
                   )}
                 >
                   {label}
                 </span>
               </span>
-            </NavLink>
+            </MotionLink>
           </div>
-        );
-      }}
+        )
+      }
     </ResponsiveComponent>
   );
 };

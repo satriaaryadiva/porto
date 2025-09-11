@@ -1,27 +1,22 @@
 "use client";
 
-import Link, { LinkProps } from "next/link";
 import { motion } from "framer-motion";
-import { forwardRef, ReactNode } from "react";
-
-type MotionLinkProps = LinkProps & {
-  children: ReactNode;
-  className?: string;
-  target?: string;
-  "aria-label"?: string;
-};
+import Link, { LinkProps } from "next/link";
+import React, { forwardRef } from "react";
 
 const MotionLink = motion(
-  forwardRef<HTMLAnchorElement, MotionLinkProps>(function MotionLink(
-    { children, className, ...props },
-    ref
-  ) {
+  forwardRef<
+    HTMLAnchorElement,
+    LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
+  >(function MotionLink({ children, href, ...props }, ref) {
     return (
-      <Link {...props} ref={ref} className={className}>
+      <Link href={href} ref={ref} {...props}>
         {children}
       </Link>
     );
   })
 );
+
+MotionLink.displayName = "MotionLink";
 
 export default MotionLink;
