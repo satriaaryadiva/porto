@@ -1,37 +1,34 @@
+"use client";
+
 import Image from "next/image";
-import bg from "../../public/background/home-background.png";
+import bg from "../../public/background/bg2.jpeg";
 import RenderModel from "@/components/RenderModel";
 import Navigation from "@/components/navigation";
-  import Welcome from "@/components/welcome";
- 
+import Welcome from "@/components/welcome";
 import AnimeMaleModel from "@/components/models/Harry";
 import FireFliesBackground from "@/components/FireFliesBackground";
- 
 
 export default function Home() {
-  
   return (
-    <main className="flex min-h-screen scroll-smooth flex-col items-center justify-between relative">
-      <Navigation />
-      <FireFliesBackground />
-      <Image
-        src={bg}
-        alt="background-image"
-        fill
-        fetchPriority="high"
-        sizes="100vw"
-        className="-z-50 w-full h-full object-cover object-center opacity-40"
-      />
-      <div className="w-full h-screen">
-    
-        <RenderModel>
-
-          <AnimeMaleModel/>
-        </RenderModel>
- 
+    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden">
+      {/* Background Layer */}
+      <div className="absolute mix-blend-multiply inset-0 -z-50">
+        
+        <FireFliesBackground />
       </div>
-      <Welcome />
 
+      {/* Navigation */}
+      <Navigation />
+
+      {/* 3D Model Section */}
+      <section className="flex h-screen w-full items-center justify-center">
+        <RenderModel>
+          <AnimeMaleModel />
+        </RenderModel>
+      </section>
+
+      {/* Welcome Section */}
+      <Welcome />
     </main>
   );
 }
