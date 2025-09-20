@@ -88,11 +88,11 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3 }}
           viewport={{ once: true }}
-          className="relative w-full flex items-center justify-center"
+          className="relative w-full flex   justify-center items-center"
         >
-          <div className="relative z-10 w-full sm:w-4/5 lg:w-2/3 rounded-2xl shadow-2xl p-8 bg-gradient-to-br from-white/60 to-white/20 dark:from-slate-800/60 dark:to-slate-900/20 backdrop-blur-xl border border-white/20">
+          
             <Form />
-          </div>
+          
         </motion.div>
       </article>
     </>
