@@ -19,7 +19,7 @@ const config: Config = {
       },
       backgroundImage: {
         "firefly-radial":
-          "radial-gradient(50% 50% at 50% 50%, rgba(91, 191, 254,0.4) 0%, rgba(217,217,217,0) 100%)",
+          "radial-gradient(50% 50% at 50% 50%, rgb(83 252 24 / 0.4) 0%, rgba(0, 0, 0, 0) 100%)",
       },
       boxShadow: {
         "glass-inset": "inset 0 17px 5px -9px rgba(254,254,91,0.05)",

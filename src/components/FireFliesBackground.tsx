@@ -19,14 +19,12 @@ const FireFliesBackground = () => {
   const [fireFlies, setFireFlies] = useState<fireFly[]>([]);
 
   useEffect(() => {
-    const addFireFilyPeriodically = () => {
-      const newFirefly = createFireFly();
-      setFireFlies((prev) => [...prev.slice(-14), newFirefly]);
+    const period = () => {
+      const newFireFlies = Array.from({ length: 20 }).map(() => createFireFly());
+      setFireFlies(newFireFlies);
     };
 
-    const interval = setInterval(addFireFilyPeriodically, 2000);
-
-    return () => clearInterval(interval);
+    period();
   }, []);
 
   return (

@@ -71,7 +71,7 @@ const NavButton = ({
                 variants={item}
                 className="text-foreground rounded-full flex items-center justify-center custom-bg"
               >
-                <span className="relative w-14 h-14 p-4 animate-spin-slow-reverse group-hover:pause hover:text-accent bg-cyan-300 rounded-full text-black">
+                <span className="relative w-14 h-14 p-4 animate-spin-slow-reverse group-hover:pause hover:text-accent bg-[rgb(83,252,24)] rounded-full text-black">
                   {getIcon(icon)}
                   <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
                   <span className="absolute border-white border-2 border-solid peer-hover:inline-block px-2 py-1 left-full mx-0 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
@@ -88,7 +88,7 @@ const NavButton = ({
                 variants={item}
                 className="text-foreground rounded-full font-extrabold flex items-center justify-center custom-bg"
               >
-                <span className="relative w-10 h-10 bg-cyan-300 text-black text-xl rounded-full font-black xs:w-14 xs:h-14 p-2.5 xs:p-4 hover:text-accent">
+                <span className="relative w-10 h-10 bg-[rgb(83,252,24)] text-black text-xl rounded-full font-black xs:w-14 xs:h-14 p-2.5 xs:p-4 hover:text-accent">
                   {getIcon(icon)}
                   <span className="peer bg-transparent absolute w-full h-full" />
                   <span

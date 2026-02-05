@@ -19,7 +19,7 @@ const cards = [
     target: "_self", // Ganti dengan ID form email kamu
     desc: "Send me an email",
     action: "Write Email →",
-     link: "#form", // Ganti dengan email kamu
+    link: "#form", // Ganti dengan email kamu
     color: "text-blue-500",
   },
   {

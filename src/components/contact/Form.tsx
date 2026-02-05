@@ -96,8 +96,8 @@ const Form = () => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="max-w-lg w-full bg-slate-900/70 shadow-2xl rounded-3xl p-8 space-y-6 
-                   border border-cyan-400/40 backdrop-blur-2xl"
+        className="max-w-lg w-full bg-[rgb(83 252 24)]/70 shadow-2xl rounded-3xl p-8 space-y-6 
+                   border border-[rgb(83 252 24)]/40 backdrop-blur-2xl"
       >
         <h2 className="text-3xl font-bold text-white text-center tracking-wide">
           Hubungi Saya ✨

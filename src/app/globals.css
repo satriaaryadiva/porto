@@ -5,8 +5,8 @@
 @layer base {
   :root {
     --smooth-scroll: scroll-behavior: smooth;
-   
-    --background: 27 27 27;
+
+    --background: 11 11 12;
     --foreground: 225 225 225;
     --muted: 115 115 115;
     --accent: 91 191 254;
@@ -29,6 +29,7 @@
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(100px, 100px);
   }

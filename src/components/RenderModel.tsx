@@ -29,6 +29,7 @@ const RenderModel = ({
       shadows
       camera={{ position: [0, 0, 5], fov: 65 }}
       gl={{ preserveDrawingBuffer: true, antialias: true }}
+      dpr={[1, 2]}
     >
       <Suspense fallback={<ModelLoader />}>
         {/* Soft ambient light */}
@@ -47,7 +48,7 @@ const RenderModel = ({
         <CinematicRig>{children}</CinematicRig>
 
         {/* Environment reflection */}
-        <Environment  preset="apartment" background={false} />
+        <Environment preset="apartment" background={false} />
 
         {/* Disable zoom, fokus interaksi mouse */}
         <OrbitControls enableZoom={false} />

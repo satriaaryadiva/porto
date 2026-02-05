@@ -7,14 +7,14 @@ import { Headphone } from "@/components/models/about/Headphone";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import TypingAnimation from "@/components/welcome/TypingAnimation";
+import { useRouter } from "next/navigation";
 
 export default function About() {
   // scroll smooth ke section contact
+       const router = useRouter();
   const ToContact = () => {
-    const el = document.getElementById("contact");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+   
+     router.push("/contact");
   };
 
   return (
@@ -75,17 +75,18 @@ export default function About() {
         >
           <Link
             href="/contact"
-            className="px-7 py-3 rounded-lg font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
+            className="px-7 py-3 rounded-lg font-medium bg-[#53FC18] text-black hover:bg-blue-600 transition"
           >
             Hire Me
           </Link>
-
+      <Link href="/contact"> 
           <button
-            onClick={ToContact}
+      
             className="px-7 py-3 rounded-lg font-medium border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             Collaboration
           </button>
+          </Link>
         </motion.div>
       </div>
 

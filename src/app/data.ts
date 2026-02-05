@@ -11,7 +11,7 @@ Websites:
   --background: 27 27 27;
   --foreground: 225 225 225;
   --muted: 115 115 115;
-  --accent: 254 254 91; #5BBFFE
+  --accent: 254 254 91; 
 }
 
 */
@@ -23,7 +23,7 @@ export interface IProjectsData {
   date: string;
   tools: string;
   demoLink: string;
-  image : string ;
+  image: string;
 }
 
 export const projectsData: IProjectsData[] = [
@@ -60,10 +60,10 @@ export const projectsData: IProjectsData[] = [
     description: "customizable wedding invitation",
     tools: "Next.js, Tailwind CSS",
     date: "2025-05-10",
-    demoLink: "https://satriafania.vercel.app/undangan/ha",
+    demoLink: "https://satriafania.vercel.app/undangan/teman",
     image: "/image/wedding.jpg",
   },
-   {
+  {
     id: 5,
     name: "Decoor Landing Page",
     description: "Landing page for home decor",
@@ -71,21 +71,30 @@ export const projectsData: IProjectsData[] = [
     date: "2025-05-10",
     demoLink: "https://decoor.vercel.app/",
     image: "/image/decoor.png",
-    
+
   },
-  
+
+  {
+    id: 6,
+    name: "Primko",
+    description: "Finance Management App with 700 user",
+    tools: "Next.js, Tailwind CSS",
+    date: "2026-02-02",
+    demoLink: "https://primko.vercel.app",
+    image: "/image/primko.png",
+  },
 ];
 
 export interface IBtnList {
   label: string;
-  link?: string | any; 
+  link?: string | any;
   icon: string;
   newTab: boolean;
 }
 
 export const BtnList: IBtnList[] = [
   { label: "Home", link: "/", icon: "home", newTab: false },
-  { label: "Tentang", link: "/about", icon: "about", newTab: true },
+  { label: "About", link: "/about", icon: "about", newTab: true },
   { label: "Projects", link: "/projects", icon: "projects", newTab: false },
   { label: "Contact", link: "/contact", icon: "contact", newTab: false },
   {
@@ -102,7 +111,7 @@ export const BtnList: IBtnList[] = [
   },
   {
     label: "Instagram",
-    link: "https://www.instagram/satriaaryadiva/",
+    link: "https://www.instagram/satriaarya05",
     icon: "instagram",
     newTab: true,
   },
